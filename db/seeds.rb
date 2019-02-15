@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
   Ingredient.create(name: "lemon")
   Ingredient.create(name: "ice")
@@ -15,3 +16,9 @@
   Ingredient.create(name: "Grape Soda")
   Ingredient.create(name: "Pineapple juice")
   Ingredient.create(name: "Bailey's irish cream")
+
+10.times do
+  cocktail = Cocktail.new(name: Faker::Beer.name)
+  cocktail.remote_photo_url = "https://source.unsplash.com/1600x900/?cocktail"
+  cocktail.save
+end
